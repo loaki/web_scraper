@@ -10,11 +10,13 @@ import json
 import time
 import io
 
-for page in range(1, 99):
+for page in range(1, 32):
     time.sleep(1)
     try:
-        #url = 'https://www.dofus.com/fr/mmorpg/encyclopedie/equipements?page='+str(page)
-        url = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment?page='+str(page)
+        url = 'https://www.dofus.com/fr/mmorpg/encyclopedie/equipements?page='+str(page)
+        #url = 'https://www.dofus.com/en/mmorpg/encyclopedia/equipment?page='+str(page)
+        #url = 'https://www.dofus.com/fr/mmorpg/encyclopedie/armes?page='+str(page)
+        #url = 'https://www.dofus.com/en/mmorpg/encyclopedia/weapons?page='+str(page)
         req=urllib.request.Request(url, None, {'User-Agent': 'Mozilla/5.0 (X11; Linux i686; G518Rco3Yp0uLV40Lcc9hAzC1BOROTJADjicLjOmlr4=) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Connection': 'keep-alive'})
         cj = CookieJar()
         opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
